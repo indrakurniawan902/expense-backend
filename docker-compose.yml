@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  expense-api:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - GIN_MODE=release
+    container_name: expense-api
+    restart: unless-stopped
