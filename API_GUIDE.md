@@ -11,9 +11,9 @@ Dokumentasi lengkap untuk mobile developer yang ingin integrate dengan API ini.
 http://localhost:8080
 ```
 
-**Production (setelah deploy):**
+**Production:**
 ```
-https://your-deployed-url
+https://indra-kurniawans-projects-production.up.railway.app
 ```
 
 ---
@@ -292,7 +292,7 @@ Semua error response mengikuti format:
 **Create Expense:**
 ```javascript
 const createExpense = async () => {
-  const response = await fetch('https://api-url/expenses', {
+  const response = await fetch('https://indra-kurniawans-projects-production.up.railway.app/expenses', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -317,7 +317,7 @@ const createExpense = async () => {
 **Get All Expenses:**
 ```javascript
 const getExpenses = async () => {
-  const response = await fetch('https://api-url/expenses');
+  const response = await fetch('https://indra-kurniawans-projects-production.up.railway.app/expenses');
   const result = await response.json();
   
   if (response.ok) {
@@ -337,7 +337,7 @@ import 'dart:convert';
 
 Future<void> createExpense() async {
   final response = await http.post(
-    Uri.parse('https://api-url/expenses'),
+    Uri.parse('https://indra-kurniawans-projects-production.up.railway.app/expenses'),
     headers: {'Content-Type': 'application/json'},
     body: jsonEncode({
       'description': 'Coffee',
@@ -360,7 +360,7 @@ Future<void> createExpense() async {
 ```dart
 Future<void> getExpenses() async {
   final response = await http.get(
-    Uri.parse('https://api-url/expenses'),
+    Uri.parse('https://indra-kurniawans-projects-production.up.railway.app/expenses'),
   );
 
   if (response.statusCode == 200) {
@@ -381,7 +381,7 @@ import requests
 import json
 
 response = requests.post(
-    'https://api-url/expenses',
+    'https://indra-kurniawans-projects-production.up.railway.app/expenses',
     json={
         'description': 'Coffee',
         'amount': 5.5,
@@ -405,7 +405,7 @@ else:
 import Foundation
 
 func createExpense() {
-    let url = URL(string: "https://api-url/expenses")!
+    let url = URL(string: "https://indra-kurniawans-projects-production.up.railway.app/expenses")!
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
